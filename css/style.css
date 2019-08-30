@@ -1,0 +1,32 @@
+.center {
+    text-align: center;
+    list-style-position: inside;
+}
+
+.ejercicio {
+    background-color: rgb(197, 80, 12);
+    margin: .5% 5%;
+    border-radius: 2%;
+    padding: .3%;
+    color: white;
+}
+
+.ejercicio:hover{
+    background-color: rgb(217, 255, 0);
+    color: black;
+}
+
+.content-canvas {
+    width: 95%;
+    margin: auto;
+}
+
+canvas {
+    border: 1px solid black;
+}
+
+.content-questions{
+    width: 300px;
+    margin: .5% auto;
+    text-align: center;
+}

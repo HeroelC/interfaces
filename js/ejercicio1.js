@@ -95,4 +95,3 @@ maxValuesRow(array);
 //Promedio de filas de una matriz
 let avg = avgRow(array);
 console.table(avg);
-
