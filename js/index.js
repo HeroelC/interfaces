@@ -1,7 +1,5 @@
 "use strict";
 
-"use strict";
-
 //Se ejecuta loadStart cuando termina de cargar el contenido de la página
 document.addEventListener('DOMContentLoaded', loadStart);
 

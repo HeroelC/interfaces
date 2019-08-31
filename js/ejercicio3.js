@@ -38,10 +38,9 @@ function setPixel(imageData, x, y, r, g, b, a){
    imageData.data[index+3] = a;
 }
 
+//Función para crear colores al azar
 function randomColor(){
     return Math.floor(Math.random() * 256);
 }
-
-//VALOR DE LA FILA / ALTO DE LA IMAGEN * 255 QUE ES EL MÁXIMO DEL COLOR
 
 createImageRandom(); //Hacer esta función dinámica
