@@ -12,25 +12,28 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1 class="titulo center">Interfaces e iteraccion de usuario</h1>
+    <h1 class="titulo center">Interfaces de usuario e interacción</h1>
     <h2 class="subtitutlo center">Carpinetti, Heroel | Entregable 1</h2>
 
     <form class="content-questions">
         <fieldset>
-          <legend>Diensiones del rectangulo</legend>
-          First name:<br>
-          <input type="text" name="firstname" value="Mickey"><br>
-          Last name:<br>
-          <input type="text" name="lastname" value="Mouse"><br><br>
-          <input type="submit" value="Submit">
+          <legend>Dimensiones del rectangulo</legend>
+          Ancho:<br>
+          <input type="text" name="width" id="width" value="100"><br>
+          Alto:<br>
+          <input type="text" name="height" id="height" value="100"><br><br>
+          <input type="color" name="color" id="color"><br><br>
+          <input type="submit" id="submit" value="Crear rectangulo">
         </fieldset>
       </form>
+
+    <p class="center" id="mensaje"></p>
 
     <div class="content-canvas">
         <canvas id="canvas"></canvas>
     </div>
     
-    <p class="center"><a href="./">Volver</a></p>
+    <p class="center"><a href="./">Volver al inicio</a></p>
     
     <script src="js/ejercicio2.js"></script>
 </body>

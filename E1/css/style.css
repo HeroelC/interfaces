@@ -1,0 +1,87 @@
+:root {
+  --heading-font: 'Open Sans', sans-serif;
+  --body-font: Lato, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-font {
+  font-family: var(--heading-font);
+}
+
+body,
+.body-font {
+  font-family: var(--body-font)
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: blueviolet;
+}
+
+.color-white{
+    color: white;
+}
+
+.center {
+    text-align: center;
+    list-style-position: inside;
+}
+
+.ejercicio {
+    background-color: white;
+    margin: .5% 5%;
+    border-radius: 2%;
+    padding: .3%;
+    color: black;
+}
+
+.ejercicio:hover{
+    background-color: rgb(217, 255, 0);
+    color: black;
+}
+
+.content-canvas {
+    width: 50%;
+    height: 300px;
+    margin: 1% auto;
+}
+
+canvas {
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+}
+
+.content-questions{
+    width: 300px;
+    margin: .5% auto;
+    text-align: center;
+}
+
+body {
+    background-image: url('../img/fondo.png');
+}
+
+.seleccionarImagen{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.imgOption{
+    width: 20%;
+    height: 200px;
+    border-radius: 5%;
+}
+
+.imgOption:hover{
+    filter: sepia(60%);
+}

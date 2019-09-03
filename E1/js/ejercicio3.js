@@ -1,8 +1,8 @@
 "use strict";
 
 //CONSTANTES
-const WIDTH = 500;
-const HEIGHT = 200;
+const WIDTH = 200;
+const HEIGHT = 100;
 
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
@@ -19,7 +19,7 @@ function createImageRandom(){
             setPixel(imageData, i, j, randomColor(), randomColor(), randomColor(), 255);
         }
     }
-    //Ayuda memoria: Investigar esta funcion
+    //Dibuja imagen en el canvas
     ctx.putImageData(imageData, 0, 0);
 }
 
@@ -43,4 +43,4 @@ function randomColor(){
     return Math.floor(Math.random() * 256);
 }
 
-createImageRandom(); //Hacer esta función dinámica
+createImageRandom();
