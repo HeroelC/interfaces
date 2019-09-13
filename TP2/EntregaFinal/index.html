@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practico 2: Eventos y formas</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 class="center">Interfaces de usuario e interacción</h1>
+    <h2 class="center">Carpinetti, Heroel | Entregable 2</h2>
+
+    <div class="panel center">
+        <button id="openPolygon" class="btnPanel">Crear poligono</button>
+        <button id="closePolygon" class="btnPanel" hidden>Cerrar poligono</button>
+        <button id="clearScreen" class="btnPanel">Limpiar pantalla</button>
+    </div>
+
+    <div class="center">
+        <canvas tabindex="1" id="canvas" width="1000px" height="450px"></canvas>
+    </div>
+
+    <p class="center" id="errorMessage"></p>
+
+    <script src="js/index.js" type="module"></script>
+</body>
+</html>
