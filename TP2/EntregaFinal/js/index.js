@@ -32,13 +32,6 @@ let vertexPolygonActually = null;
  */
 let modeCreatePolygon = false;
 
-/** Variables para hacer responsive el canvas **/
-let propiertyCanvas = getComputedStyle(canvas);
-let widthActualy = propiertyCanvas.width;
-let heightActualy = propiertyCanvas.height;
-canvas.width = widthActualy.split('px')[0];
-canvas.height = heightActualy.split('px')[0];
-
 /******************************************************************
  * Variable para verificar si se esta presionando la tecla C 
  *******************************************************************/
@@ -154,6 +147,8 @@ addEventListener('DOMContentLoaded', () => {
 
     canvas.onkeyup = e => {
         keyPressVerify = false;
+        colourActualy = 1;
+        update();
     }
     /**********************************************************
      * Añade funcionalidad a los botones:

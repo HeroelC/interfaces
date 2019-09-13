@@ -8,6 +8,10 @@ canvas{
     border-radius: 5%;
 }
 
+.content-canvas{
+    width: 100%;
+}
+
 .center{
     text-align: center;
 }
