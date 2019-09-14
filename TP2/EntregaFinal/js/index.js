@@ -56,15 +56,16 @@ let errorMessage = document.getElementById('errorMessage');
 addEventListener('DOMContentLoaded', () => {
 
     canvas.onclick = e => {
+        let rect = canvas.getBoundingClientRect();
         if (modeCreatePolygon) {
             if (createPolygon === true) {
                 polygon = new Polygon();
-                let vertex = new Vertex(e.layerX, e.layerY);
+                let vertex = new Vertex(e.offsetX, e.offsetY);
                 polygon.addVertex(vertex);
                 polygon.draw(ctx);
                 createPolygon = false;
             } else {
-                let vertex = new Vertex(e.layerX, e.layerY);
+                let vertex = new Vertex(e.offsetX, e.offsetY);
                 polygon.addVertex(vertex);
                 polygon.draw(ctx);
             }
@@ -73,7 +74,7 @@ addEventListener('DOMContentLoaded', () => {
 
     canvas.onmousedown = e => {
         for (let i = 0; i < polygons.length; i++) {
-            if (polygons[i].center.isSelected(e.layerX, e.layerY)) {
+            if (polygons[i].center.isSelected(e.offsetX, e.offsetY)) {
                 polygonActually = polygons[i];
                 break;
             }
@@ -81,7 +82,7 @@ addEventListener('DOMContentLoaded', () => {
 
         for (let i = 0; i < polygons.length; i++) {
             for (let j = 0; j < polygons[i].vertex.length; j++) {
-                if (polygons[i].vertex[j].isSelected(e.layerX, e.layerY)) {
+                if (polygons[i].vertex[j].isSelected(e.offsetX, e.offsetY)) {
                     vertexPolygonActually = polygons[i].vertex[j];
                 }
             }
@@ -95,12 +96,12 @@ addEventListener('DOMContentLoaded', () => {
 
     canvas.onmousemove = e => {
         if (polygonActually != null) {
-            polygonActually.move(e.layerX, e.layerY);
+            polygonActually.move(e.offsetX, e.offsetY);
             update();
         }
         if (vertexPolygonActually != null) {
-            vertexPolygonActually.x = e.layerX;
-            vertexPolygonActually.y = e.layerY;
+            vertexPolygonActually.x = e.offsetX;
+            vertexPolygonActually.y = e.offsetY;
             update();
         }
     }
@@ -118,7 +119,7 @@ addEventListener('DOMContentLoaded', () => {
     canvas.ondblclick = e => {
         for (let i = 0; i < polygons.length; i++) {
             for (let j = 0; j < polygons[i].vertex.length; j++) {
-                if (polygons[i].vertex[j].isSelected(e.layerX, e.layerY)) {
+                if (polygons[i].vertex[j].isSelected(e.offsetX, e.offsetY)) {
                     polygons[i].deleteVertex(polygons[i].vertex[j]);
                     update();
                     break;
