@@ -7,31 +7,26 @@ import {
     Polygon
 } from './Figura/Polygon.js';
 
-/** 
+/*************************************************************************
  * Constantes de mensajes del sistema 
- **/
+ *************************************************************************/
 const POLYGON_MIN_POINTS = "Para cerrar un poligono se necesitan al menos 3 puntos";
 const MESSAGE_VOID = " ";
 
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
-
 /** Variable para reconocer si se debe o no crear un nuevo poligono**/
 let createPolygon = true;
-
 /**Variables para crear y almacenar poligonos **/
 let polygon;
 let polygons = [];
-
 /** Variables para almacenar objetos actuales seleccionados **/
 let polygonActually = null;
 let vertexPolygonActually = null;
-
-/**
+/*********************************************************************
  * Variable para definir si se debe empezar a crear otro poligono
- */
+ *********************************************************************/
 let modeCreatePolygon = false;
-
 /******************************************************************
  * Variable para verificar si se esta presionando la tecla C 
  *******************************************************************/
@@ -41,22 +36,21 @@ let colourActualy = 1;
 /***********************************************************************
  * Variable de los botones
  ***********************************************************************/
-
 let btnClosePolygon = document.getElementById('closePolygon');
 let btnClearScreen = document.getElementById('clearScreen');
 let btnOpenPolygon = document.getElementById('openPolygon');
-
+/** Parrafo que contiene los errores **/
 let errorMessage = document.getElementById('errorMessage');
-
 /***********************************************************************
- * posX mouse click in canvas => event.layerX
+ * posX mouse click in canvas => event.layerX 
  * posY mouse click in canvas => event.layerY
+ * ACLARACIÓN: Cambie layerX e layerY porque funcionaba en chrome sin
+ * problemas pero mozila no lo tomaba correctamente, con offsetX e
+ * offsetY funciona en los dos correctamente.
  ***********************************************************************/
-
 addEventListener('DOMContentLoaded', () => {
 
     canvas.onclick = e => {
-        let rect = canvas.getBoundingClientRect();
         if (modeCreatePolygon) {
             if (createPolygon === true) {
                 polygon = new Polygon();
@@ -88,12 +82,10 @@ addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-
     /******************************************************************
      * Si el objeto actual(poligono/vertice) no esta nulo se actualiza 
      * con las coord X e Y del mouse, luego de los cambios actualizar
      ******************************************************************/
-
     canvas.onmousemove = e => {
         if (polygonActually != null) {
             polygonActually.move(e.offsetX, e.offsetY);
@@ -114,7 +106,9 @@ addEventListener('DOMContentLoaded', () => {
         vertexPolygonActually = null;
     }
     /******************************************************************
-     * 
+     * Verifica que vertice esta siendo clickeado
+     * Se realiza el eliminado de dicho vertice
+     * Se realiza update
      ******************************************************************/
     canvas.ondblclick = e => {
         for (let i = 0; i < polygons.length; i++) {
@@ -145,7 +139,7 @@ addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-
+    /** Si se suela la tecla vuelve el color por defecto **/
     canvas.onkeyup = e => {
         keyPressVerify = false;
         colourActualy = 1;
