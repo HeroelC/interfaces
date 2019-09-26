@@ -1,0 +1,73 @@
+#game-runner {
+    width: 60%;
+    height: 450px;
+    margin: 7% auto auto;
+}
+
+#score {
+    z-index: 100;
+    color: white;
+    position: relative;
+    text-align: center;
+    top: -20%;
+    font-weight: bold;
+}
+
+#building {
+    position: relative;
+    height: 250px;
+    z-index: 10;
+    background: url('/img/scene-runner/building.png');
+}
+
+.building-animation {
+    animation: building-animation 7s linear infinite;
+}
+
+#background-sky {
+    position: relative;
+    top: -400px;
+    z-index: 5;
+    height: 400px;
+    background-size: cover;
+    background: url('/img/scene-runner/background-sky.jpg');
+}
+
+.background-sky-animation {
+    animation: background-sky-animation 60s linear infinite;
+}
+
+#ground {
+    position: relative;
+    top: -420px;
+    height: 100px;
+    z-index: 100;
+    background-size: cover;
+    background: url('/img/scene-runner/ground.png');
+}
+
+.ground-animation {
+    animation: ground-animation 10s linear infinite;
+}
+
+@keyframes ground-animation {
+    100% {
+        background-position: -1920px;
+    }
+}
+
+@keyframes building-animation {
+    0% {
+        background-position: 0
+    }
+
+    100% {
+        background-position: -300px
+    }
+}
+
+@keyframes background-sky-animation {
+    100% {
+        background-position: -1920px
+    }
+}

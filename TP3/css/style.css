@@ -1,0 +1,48 @@
+:root {
+  /* Colores de la página */
+  --primaryColour: rgb(148, 9, 9);
+  --secondaryColour: white;
+  /* Colores de las letras */
+  --primaryColourText: white;
+  --secondaryColourText: rgb(148, 9, 9);
+  /* Colores de links */
+  --primaryColourLink: rgb(59, 103, 214);
+  --secondaryColourLink: rgb(5, 0, 255);
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+}
+
+.center {
+  text-align: center;
+}
+
+nav {
+  margin-bottom: 8%;
+}
+
+.listLink {
+  display: inline;
+}
+
+nav ul {
+  padding: 0%;
+}
+
+.nav-link:hover {
+  font-weight: bold;
+  color: var(--primaryColourText);
+  background-color: var(--primaryColour);
+}
+
+.nav-link {
+  color: var(--primaryColour);
+  background-color: var(--secondaryColour);
+
+  text-decoration: none;
+  font-weight: bold;
+
+  padding: 1%;
+  border-radius: 5%;
+}
