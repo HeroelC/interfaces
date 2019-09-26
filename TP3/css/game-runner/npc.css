@@ -5,12 +5,12 @@
     top: -170%;
     right: 700px;
     position: relative;
-    background: url('/sprite/npc.png');
+    background: url('/TP3/sprite/npc.png');
     background-position: 0 100px;   
 }
 
 .npc-run{
-    background: url('/sprite/npc.png');
+    background: url('/TP3/sprite/npc.png');
     animation: npc-run-left 1.75s steps(6) infinite;
 }
 

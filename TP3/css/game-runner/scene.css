@@ -17,11 +17,11 @@
     position: relative;
     height: 250px;
     z-index: 10;
-    background: url('/img/scene-runner/building.png');
+    background: url('/TP3/img/scene-runner/building.png');
 }
 
 .building-animation {
-    animation: building-animation 7s linear infinite;
+    animation: building-animation 25s linear infinite;
 }
 
 #background-sky {
@@ -30,7 +30,7 @@
     z-index: 5;
     height: 400px;
     background-size: cover;
-    background: url('/img/scene-runner/background-sky.jpg');
+    background: url('/TP3/img/scene-runner/background-sky.jpg');
 }
 
 .background-sky-animation {
@@ -43,7 +43,7 @@
     height: 100px;
     z-index: 100;
     background-size: cover;
-    background: url('/img/scene-runner/ground.png');
+    background: url('/TP3/img/scene-runner/ground.png');
 }
 
 .ground-animation {
@@ -57,12 +57,9 @@
 }
 
 @keyframes building-animation {
-    0% {
-        background-position: 0
-    }
-
-    100% {
-        background-position: -300px
+    100% 
+    {
+        background-position: -857px
     }
 }
 

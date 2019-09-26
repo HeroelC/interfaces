@@ -12,11 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //** PLAYER OBJECT **/
     let player = document.getElementById('player');
+    let playerWidth = player.offsetWidth;
+    let playerHeight = player.offsetHeight;
+    let playerPosX;
+    let playerPosY;
     let points = document.getElementById('points');
 
     //** NPC OBJECT **/
     let npc = document.getElementById('npc');
-
+    let npcWidth = npc.offsetWidth;
+    let npcHeight = npc.offsetHeight;
+    let npcPosX;
+    let npcPosY;
     /** 
      * Si el player se encuentra saltando evita que comience
      * otra animación de salto.
@@ -35,36 +42,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-
+    
     document.onclick = e => {
-        console.log(e.layerY);
-        console.log(e.layerX);
+        gameOver = false;
+        window.requestAnimationFrame(gameLoop);
     }
 
-    setInterval(update, 100);
+    let gameLoop = () => {
+        if (!gameOver) {
 
-    function update() {
+            //Actualizar juego
+            update();
 
-        if(!gameOver){
-            let w1 = player.offsetWidth;
-            let h1 = player.offsetHeight;
-            let x1 = player.offsetLeft;
-            let y1 = player.offsetTop;
-
-            let w2 = npc.offsetWidth;
-            let h2 = npc.offsetHeight;
-            let x2 = npc.offsetLeft;
-            let y2 = npc.offsetTop;
-
-            if(isGameOver(x1, y1, w1, h1, x2, y2, w2, h2)){
+            /** Función para saber si el juego debe terminar **/
+            if (isGameOver(playerPosX, playerPosY, playerWidth,
+                    playerHeight, npcPosX, npcPosY, npcWidth,
+                    npcHeight)) {
                 gameOver = true;
             }
-
+            if (isGameOver(playerPosX, playerPosY, playerWidth,
+                    playerHeight, npcPosX, npcPosY, npcWidth,
+                    npcHeight)) {
+                gameOver = true;
+                window.cancelAnimationFrame(gameLoop);
+            }
+            window.requestAnimationFrame(gameLoop);
         }
-
     }
 
-    function isGameOver(x1, y1, w1, h1, x2, y2, w2, h2){
+    window.requestAnimationFrame(gameLoop);
+
+    function isGameOver(x1, y1, w1, h1, x2, y2, w2, h2) {
         if (isCollision(x1, y1, w1, h1, x2, y2, w2, h2)) {
             /** DETENCIÓN DE ANIMACIONES DEL FONDO **/
             building.classList.remove('building-animation');
@@ -82,6 +90,19 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
     }
+
+    /** Función para actualizar los objetos del juego
+     * - PLAYER: posX e posY
+     * - NPC: posX e posY
+     * - 
+     * **/
+    function update() {
+        playerPosX = player.offsetLeft;
+        playerPosY = player.offsetTop;
+
+        npcPosX = npc.offsetLeft;
+        npcPosY = npc.offsetTop;
+    }
 });
 
 function isCollision(x1, y1, w1, h1, x2, y2, w2, h2) {
@@ -94,4 +115,3 @@ function isCollision(x1, y1, w1, h1, x2, y2, w2, h2) {
         return false;
     }
 }
-

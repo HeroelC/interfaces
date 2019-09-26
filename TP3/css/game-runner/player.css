@@ -8,17 +8,17 @@
 }
 
 .player-run-right{
-    background: url('/sprite/game-runner/player/player-run-right.png');
+    background: url('/TP3/sprite/game-runner/player/player-run-right.png');
     animation: player-run-right 0.7s steps(6) infinite;
 }
 
 .player-jump{
-    background: url('/sprite/game-runner/player/player-jump.png');
+    background: url('/TP3/sprite/game-runner/player/player-jump.png');
     animation: player-jump 1s steps(4) infinite;
 }
 
 .player-dead{
-    background: url('/sprite/game-runner/player/player-dead.png');
+    background: url('/TP3/sprite/game-runner/player/player-dead.png');
     animation: player-dead 2s steps(9);
 }
 
