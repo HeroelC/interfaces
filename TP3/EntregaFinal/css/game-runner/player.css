@@ -8,22 +8,22 @@
 }
 
 .player-run-right{
-    background: url('/TP3/EntregaFinal/sprite/game-runner/player/player-run-right.png');
+    background: url('../../sprite/game-runner/player/player-run-right.png');
     animation: player-run-right 0.7s steps(6) infinite;
 }
 
 .player-jump{
-    background: url('/TP3/EntregaFinal/sprite/game-runner/player/player-jump.png');
+    background: url('../../sprite/game-runner/player/player-jump.png');
     animation: player-jump 1s steps(4) infinite;
 }
 
 .player-dead{
-    background: url('/TP3/EntregaFinal/sprite/game-runner/player/player-dead.png');
+    background: url('../../sprite/game-runner/player/player-dead.png');
     animation: player-dead 2s steps(9);
 }
 
 .player-dead-img{
-    background: url('/TP3/EntregaFinal/img/player-runner/player-dead.png');
+    background: url('../../img/player-runner/player-dead.png');
 }
 
 @keyframes player-run-right{

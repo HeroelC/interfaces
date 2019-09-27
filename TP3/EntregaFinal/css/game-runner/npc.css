@@ -5,12 +5,12 @@
     top: -182%;
     right: 700px;
     position: relative;
-    background: url('/TP3/EntregaFinal/sprite/game-runner/npc/npc.png');
+    background: url('../../sprite/game-runner/npc/npc.png');
     background-position: 0 100px;   
 }
 
 .npc-run{
-    background: url('/TP3/EntregaFinal/sprite/game-runner/npc/npc.png');
+    background: url('../../sprite/game-runner/npc/npc.png');
     animation: npc-run-left 1.75s steps(6) infinite;
 }
 

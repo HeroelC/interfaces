@@ -34,7 +34,7 @@
     position: relative;
     height: 250px;
     z-index: 10;
-    background: url('/TP3/EntregaFinal/img/scene-runner/building.png');
+    background: url('../../img/scene-runner/building.png');
 }
 
 .building-animation {
@@ -47,7 +47,7 @@
     z-index: 5;
     height: 450px;
     background-size: cover;
-    background: url('/TP3/EntregaFinal/img/scene-runner/background-sky.jpg');
+    background: url('../../img/scene-runner/background-sky.jpg');
 }
 
 .background-sky-animation {
@@ -60,7 +60,7 @@
     height: 100px;
     z-index: 100;
     background-size: cover;
-    background: url('/TP3/EntregaFinal/img/scene-runner/ground.png');
+    background: url('../../img/scene-runner/ground.png');
 }
 
 .ground-animation {
