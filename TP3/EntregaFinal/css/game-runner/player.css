@@ -12,7 +12,7 @@
     animation: player-run-right 0.7s steps(6) infinite;
 }
 
-.player-jump{
+.player-jump{ 
     background: url('../../sprite/game-runner/player/player-jump.png');
     animation: player-jump 1s steps(4) infinite;
 }

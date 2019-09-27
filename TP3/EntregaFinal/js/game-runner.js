@@ -55,6 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
             //Actualizar juego
             update();
 
+            increasePoints();
+
+            if(points.innerHTML >= 1000){
+                window.cancelAnimationFrame(gameLoop);
+            }
+            
             /** Función para saber si el juego debe terminar **/
             if (isGameOver(playerPosX, playerPosY, playerWidth,
                     playerHeight, npcPosX, npcPosY, npcWidth,
@@ -86,9 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2000);
             return true;
         } else {
-            /** RECORDAR QUE ESTO NO VA ACA!**/
-            let point = parseInt(points.innerHTML) + 1;
-            points.innerHTML = point;
             return false;
         }
     }
@@ -104,6 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         npcPosX = npc.offsetLeft;
         npcPosY = npc.offsetTop;
+    }
+
+    /** Funcion para el manejo de la puntuacion **/
+    function increasePoints(){
+            let point = parseInt(points.innerHTML) + 1;
+            points.innerHTML = point;
     }
 
     /** Función para poder volver a jugar **/
