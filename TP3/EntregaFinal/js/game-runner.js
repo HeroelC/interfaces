@@ -41,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 1000);
             }
         }
-    }
-    
-    document.onclick = e => {
-        if(gameOver){
-            resetGame();
+
+        if(e.code == 'Enter'){
+            if(gameOver){
+                resetGame();
+            }
         }
     }
 
