@@ -44,8 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     document.onclick = e => {
-        gameOver = false;
-        // window.requestAnimationFrame(gameLoop);
+        if(gameOver){
+            resetGame();
+        }
     }
 
     let gameLoop = () => {
@@ -108,13 +109,23 @@ document.addEventListener('DOMContentLoaded', () => {
     /** Función para poder volver a jugar **/
     function resetGame(){
         /** Reiniciar puntos del juego **/
-
+        points.innerHTML = 0;
+        /** Sacar carteles de información **/
+        let gameInfo = document.getElementById('game-info');
+        gameInfo.classList.add('no-visibility');
         /** Animar fondo **/
-
+        building.classList.add('building-animation');
+        backgroundSky.classList.add('background-sky-animation');
+        ground.classList.add('ground-animation');
         /** Animar personaje **/
-
+        player.classList.remove('player-dead');
+        player.classList.remove('player-dead-img');
+        player.classList.add('player-run-right');
         /** Animar NPC **/
-
+        npc.classList.add('npc-run');
+        /** Llamar al Loop del juego de nuevo**/        
+        gameOver = false;
+        window.requestAnimationFrame(gameLoop);
     }
 });
 
