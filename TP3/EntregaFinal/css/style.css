@@ -1,7 +1,7 @@
 :root {
   /* Colores de la página */
-  --primaryColour: rgb(148, 9, 9);
-  --secondaryColour: white;
+  --primaryColour: rgb(11, 2, 58);
+  --secondaryColour: #ffffff;
   /* Colores de las letras */
   --primaryColourText: white;
   --secondaryColourText: rgb(148, 9, 9);
@@ -19,7 +19,7 @@ body {
 }
 
 nav {
-  margin-bottom: 8%;
+  margin-bottom: 3%;
 }
 
 .listLink {

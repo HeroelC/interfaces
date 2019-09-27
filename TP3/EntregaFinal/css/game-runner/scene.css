@@ -1,7 +1,7 @@
 #game-runner {
     width: 60%;
     height: 450px;
-    margin: 7% auto auto;
+    margin: auto;
 }
 
 #score {
@@ -9,15 +9,32 @@
     color: white;
     position: relative;
     text-align: center;
-    top: -20%;
+    top: 1%;
     font-weight: bold;
+}
+
+#game-info{
+    z-index: 120;
+    color: white;
+    position: relative;
+    text-align: center;
+    top: 5%;
+}
+
+.no-visibility{
+    visibility: hidden
+}
+
+.info-endgame{
+    margin: 0;
+    font-size: 3em;
 }
 
 #building {
     position: relative;
     height: 250px;
     z-index: 10;
-    background: url('/TP3/img/scene-runner/building.png');
+    background: url('/TP3/EntregaFinal/img/scene-runner/building.png');
 }
 
 .building-animation {
@@ -26,11 +43,11 @@
 
 #background-sky {
     position: relative;
-    top: -400px;
+    top: -465px;
     z-index: 5;
-    height: 400px;
+    height: 450px;
     background-size: cover;
-    background: url('/TP3/img/scene-runner/background-sky.jpg');
+    background: url('/TP3/EntregaFinal/img/scene-runner/background-sky.jpg');
 }
 
 .background-sky-animation {
@@ -39,11 +56,11 @@
 
 #ground {
     position: relative;
-    top: -420px;
+    top: -105%;
     height: 100px;
     z-index: 100;
     background-size: cover;
-    background: url('/TP3/img/scene-runner/ground.png');
+    background: url('/TP3/EntregaFinal/img/scene-runner/ground.png');
 }
 
 .ground-animation {

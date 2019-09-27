@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     document.onclick = e => {
         gameOver = false;
-        window.requestAnimationFrame(gameLoop);
+        // window.requestAnimationFrame(gameLoop);
     }
 
     let gameLoop = () => {
@@ -55,11 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
             update();
 
             /** Función para saber si el juego debe terminar **/
-            if (isGameOver(playerPosX, playerPosY, playerWidth,
-                    playerHeight, npcPosX, npcPosY, npcWidth,
-                    npcHeight)) {
-                gameOver = true;
-            }
             if (isGameOver(playerPosX, playerPosY, playerWidth,
                     playerHeight, npcPosX, npcPosY, npcWidth,
                     npcHeight)) {
@@ -83,8 +78,14 @@ document.addEventListener('DOMContentLoaded', () => {
             /** DETENCIÓN DE ANIMACIÓN DE CORRER DEL PLAYER**/
             player.classList.remove('player-run-right');
             player.classList.add('player-dead');
+            setTimeout(() => {
+                player.classList.add('player-dead-img');
+                let gameInfo = document.getElementById('game-info');
+                gameInfo.classList.remove('no-visibility');
+            }, 2000);
             return true;
         } else {
+            /** RECORDAR QUE ESTO NO VA ACA!**/
             let point = parseInt(points.innerHTML) + 1;
             points.innerHTML = point;
             return false;
@@ -102,6 +103,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         npcPosX = npc.offsetLeft;
         npcPosY = npc.offsetTop;
+    }
+
+    /** Función para poder volver a jugar **/
+    function resetGame(){
+        /** Reiniciar puntos del juego **/
+
+        /** Animar fondo **/
+
+        /** Animar personaje **/
+
+        /** Animar NPC **/
+
     }
 });
 
