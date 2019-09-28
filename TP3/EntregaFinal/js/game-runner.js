@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /** VARIABLES DEL JUEGO **/
     let gameRunner = document.getElementById('game-runner');
-    let gameOver = false;
-    let resetGameOption = false;
+    let gameOver = true;
+    let startGameOption = false;
 
     /** SCENE OBJECT **/
     let building = document.getElementById('building');
@@ -32,21 +32,29 @@ document.addEventListener('DOMContentLoaded', () => {
      * **/
     let activeJump = true;
 
-    document.onkeyup = e => {
-        e.preventDefault();
-        if (e.code == 'Space') {
-            if (activeJump && !gameOver) {
-                activeJump = false;
-                player.classList.add('player-jump');
-                setTimeout(() => {
-                    player.classList.remove('player-jump');
-                    activeJump = true;
-                }, 1200);
-            }
+    document.onkeypress = (e) => {
+        e = e || window.event;
+        let charCode = e.keyCode || e.which;
+        if (charCode === 32) {
+            e.preventDefault();
+            return false;
         }
+    }
 
-        if(e.code == 'Enter'){
-            if(gameOver){
+    document.onkeyup = e => {
+            if (e.code == 'Space') {
+                if (activeJump && !gameOver) {
+                    activeJump = false;
+                    player.classList.add('player-jump');
+                    setTimeout(() => {
+                        player.classList.remove('player-jump');
+                        activeJump = true;
+                    }, 1000);
+                }
+            }
+        
+        if (e.code == 'Enter') {
+            if (gameOver) {
                 resetGame();
             }
         }
@@ -60,10 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             increasePoints();
 
-            if(isWonGame()){
-                
-            }
-            
+            // if (isWonGame()) {
+
+            // }
+
             /** Función para saber si el juego debe terminar **/
             if (isGameOver(playerPosX, playerPosY, playerWidth,
                     playerHeight, npcPosX, npcPosY, npcWidth,
@@ -72,6 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.cancelAnimationFrame(gameLoop);
             }
             window.requestAnimationFrame(gameLoop);
+        }else{
+            stopGame();
         }
     }
 
@@ -79,24 +89,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function isGameOver(x1, y1, w1, h1, x2, y2, w2, h2) {
         if (isCollision(x1, y1, w1, h1, x2, y2, w2, h2)) {
-            /** DETENCIÓN DE ANIMACIONES DEL FONDO **/
-            building.classList.remove('building-animation');
-            backgroundSky.classList.remove('background-sky-animation');
-            ground.classList.remove('ground-animation');
-            /** DETENCION DE ANIMACION DE NPC **/
-            npc.classList.remove('npc-run');
-            /** DETENCIÓN DE ANIMACIÓN DE CORRER DEL PLAYER**/
-            player.classList.remove('player-run-right');
+            stopGame();
+            /** Añade la animación de muerte **/
             player.classList.add('player-dead');
             setTimeout(() => {
                 player.classList.remove('player-dead');
             }, 2000);
-            let gameInfo = document.getElementById('game-info');
-            gameInfo.classList.remove('no-visibility');
+            /** Información al usuario **/
+            let infoEndGame = document.getElementById('info-primary');
+            infoEndGame.classList.remove('no-visibility');
             return true;
         } else {
             return false;
         }
+    }
+
+    function stopGame() {
+        /** DETENCIÓN DE ANIMACIONES DEL FONDO **/
+        building.classList.remove('building-animation');
+        backgroundSky.classList.remove('background-sky-animation');
+        ground.classList.remove('ground-animation');
+        /** DETENCION DE ANIMACION DE NPC **/
+        npc.classList.remove('npc-run');
+        /** DETENCIÓN DE ANIMACIÓN DE CORRER DEL PLAYER**/
+        player.classList.remove('player-run-right');
+        let gameInfo = document.getElementById('game-info');
+        gameInfo.classList.remove('no-visibility');
     }
 
     /** Función para actualizar los objetos del juego
@@ -109,23 +127,23 @@ document.addEventListener('DOMContentLoaded', () => {
         playerPosY = player.offsetTop;
 
         /** Colision mas amigable **/
-        npcPosX = npc.offsetLeft + 30;
-        npcPosY = npc.offsetTop + 30;
+        npcPosX = npc.offsetLeft;
+        npcPosY = npc.offsetTop + 50;
     }
 
     /** Función para saber si se gano el juego**/
-    function isWonGame(){
-         return points.innerHTML >= 1000;
+    function isWonGame() {
+        return points.innerHTML >= 1000;
     }
 
     /** Funcion para el manejo de la puntuacion **/
-    function increasePoints(){
-            let point = parseInt(points.innerHTML) + 1;
-            points.innerHTML = point;
+    function increasePoints() {
+        let point = parseInt(points.innerHTML) + 1;
+        points.innerHTML = point;
     }
 
     /** Función para poder volver a jugar **/
-    function resetGame(){
+    function resetGame() {
         /** Reiniciar puntos del juego **/
         points.innerHTML = 0;
         /** Sacar carteles de información **/
@@ -140,13 +158,13 @@ document.addEventListener('DOMContentLoaded', () => {
         player.classList.add('player-run-right');
         /** Animar NPC **/
         npc.classList.add('npc-run');
-        /** Llamar al Loop del juego de nuevo**/        
+        /** Llamar al Loop del juego de nuevo**/
         gameOver = false;
         window.requestAnimationFrame(gameLoop);
     }
 });
 
 function isCollision(x1, y1, w1, h1, x2, y2, w2, h2) {
-    return x1 < x2 + w2 && x1 + w1 > x2 && y1 < y2 + h2 
-    && h1 + y1 > y2;
+    return x1 < x2 + w2 && x1 + w1 > x2 && y1 < y2 + h2 &&
+        h1 + y1 > y2;
 }
