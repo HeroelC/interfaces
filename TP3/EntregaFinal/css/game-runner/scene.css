@@ -62,7 +62,7 @@
 }
 
 .ground-animation {
-    animation: ground-animation 10s linear infinite;
+    animation: ground-animation 8s linear infinite;
 }
 
 @keyframes ground-animation {

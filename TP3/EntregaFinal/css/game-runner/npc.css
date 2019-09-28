@@ -9,7 +9,7 @@
 
 .npc-run {
     background: url('../../sprite/game-runner/npc/npc.png');
-    animation: npc-run-left 3.5s steps(6) infinite;
+    animation: npc-run-left 2s steps(6) infinite;
 }
 
 @keyframes npc-run-left {
@@ -19,53 +19,23 @@
         right: -90%;
     }
     
-    10% {
+    25% {
         background-position: 600px 100px;
-        right: -90%;
-    }
-
-    20% {
-        background-position: 0 100px;
-        right: -80%;
-    }
-
-    30% {
-        background-position: 600px 100px;
-        right: -70%;
-    }
-
-    40% {
-        background-position: 0 100px;
-        right: -60%;
+        right: -65%;
     }
 
     50% {
+        background-position: 0px 100px;
+        right: -45%;
+    }
+
+    75% {
         background-position: 600px 100px;
-        right: -50%;
-    }
-
-    60% {
-        background-position: 0 100px;
-        right: -40%;
-    }
-
-    70% {
-        background-position: 600px 100px;
-        right: -30%;
-    }
-
-    80% {
-        background-position: 0 100px;
         right: -20%;
     }
 
-    90% {
-        background-position: 600px 100px;
-        right: -10%;
-    }
-
     100% {
-        background-position: 600px 100px;
+        background-position: 0px 100px;
         right: 0%
     }
 }

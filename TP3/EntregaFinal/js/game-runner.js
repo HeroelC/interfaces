@@ -68,10 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             increasePoints();
 
-            // if (isWonGame()) {
-
-            // }
-
             /** Función para saber si el juego debe terminar **/
             if (isGameOver(playerPosX, playerPosY, playerWidth,
                     playerHeight, npcPosX, npcPosY, npcWidth,
@@ -79,6 +75,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 gameOver = true;
                 window.cancelAnimationFrame(gameLoop);
             }
+
+            if (isWonGame()) {
+                stopGame();
+                let info = document.getElementById('info-primary');
+                info.innerHTML = "WIN";
+                info.classList.remove('no-visibility');
+                gameOver = true;
+                window.cancelAnimationFrame(gameLoop);
+            }
+
             window.requestAnimationFrame(gameLoop);
         }else{
             stopGame();
@@ -97,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2000);
             /** Información al usuario **/
             let infoEndGame = document.getElementById('info-primary');
+            infoEndGame.innerHTML = "GAME OVER";
             infoEndGame.classList.remove('no-visibility');
             return true;
         } else {
@@ -133,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /** Función para saber si se gano el juego**/
     function isWonGame() {
-        return points.innerHTML >= 1000;
+        return points.innerHTML >= 300;
     }
 
     /** Funcion para el manejo de la puntuacion **/
