@@ -2,8 +2,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    /** VARIABLES DEL JUEGO **/
     let gameRunner = document.getElementById('game-runner');
     let gameOver = false;
+    let resetGameOption = false;
 
     /** SCENE OBJECT **/
     let building = document.getElementById('building');
@@ -31,14 +33,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeJump = true;
 
     document.onkeyup = e => {
+        e.preventDefault();
         if (e.code == 'Space') {
-            if (activeJump) {
+            if (activeJump && !gameOver) {
                 activeJump = false;
                 player.classList.add('player-jump');
                 setTimeout(() => {
                     player.classList.remove('player-jump');
                     activeJump = true;
-                }, 1000);
+                }, 1200);
             }
         }
 
@@ -57,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             increasePoints();
 
-            if(points.innerHTML >= 1000){
-                window.cancelAnimationFrame(gameLoop);
+            if(isWonGame()){
+                
             }
             
             /** Función para saber si el juego debe terminar **/
@@ -86,10 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
             player.classList.remove('player-run-right');
             player.classList.add('player-dead');
             setTimeout(() => {
-                player.classList.add('player-dead-img');
-                let gameInfo = document.getElementById('game-info');
-                gameInfo.classList.remove('no-visibility');
+                player.classList.remove('player-dead');
             }, 2000);
+            let gameInfo = document.getElementById('game-info');
+            gameInfo.classList.remove('no-visibility');
             return true;
         } else {
             return false;
@@ -105,8 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
         playerPosX = player.offsetLeft;
         playerPosY = player.offsetTop;
 
-        npcPosX = npc.offsetLeft;
-        npcPosY = npc.offsetTop;
+        /** Colision mas amigable **/
+        npcPosX = npc.offsetLeft + 30;
+        npcPosY = npc.offsetTop + 30;
+    }
+
+    /** Función para saber si se gano el juego**/
+    function isWonGame(){
+         return points.innerHTML >= 1000;
     }
 
     /** Funcion para el manejo de la puntuacion **/
@@ -128,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ground.classList.add('ground-animation');
         /** Animar personaje **/
         player.classList.remove('player-dead');
-        player.classList.remove('player-dead-img');
         player.classList.add('player-run-right');
         /** Animar NPC **/
         npc.classList.add('npc-run');
@@ -139,12 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function isCollision(x1, y1, w1, h1, x2, y2, w2, h2) {
-    if (x1 < x2 + w2 &&
-        x1 + w1 > x2 &&
-        y1 < y2 + h2 &&
-        h1 + y1 > y2) {
-        return true;
-    } else {
-        return false;
-    }
+    return x1 < x2 + w2 && x1 + w1 > x2 && y1 < y2 + h2 
+    && h1 + y1 > y2;
 }

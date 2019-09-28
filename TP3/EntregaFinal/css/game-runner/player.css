@@ -4,7 +4,7 @@
     width: 88px;
     height: 164px;
     position: relative;
-    top: -162%; 
+    top: -162%;
 }
 
 .player-run-right{
@@ -14,16 +14,12 @@
 
 .player-jump{ 
     background: url('../../sprite/game-runner/player/player-jump.png');
-    animation: player-jump 1s steps(4) infinite;
+    animation: player-jump 1.2s steps(4) infinite;
 }
 
 .player-dead{
     background: url('../../sprite/game-runner/player/player-dead.png');
     animation: player-dead 2s steps(9);
-}
-
-.player-dead-img{
-    background: url('../../img/player-runner/player-dead.png');
 }
 
 @keyframes player-run-right{
@@ -33,14 +29,16 @@
 
 @keyframes player-dead{
     0% {background-position: 0}
-    100% {background-position: -810px}
+    100% {
+        background-position: -810px
+    }
 }
 
 @keyframes player-jump{
     0% {background-position: 0px}
     50% {
         background-position: 360px;
-        top: -850px;
+        top: -900px;
     }
     100% {
         background-position: 720px;      
