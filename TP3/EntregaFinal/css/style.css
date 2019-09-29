@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Big Shoulders Display', cursive;
 }
 
 .center {
@@ -45,4 +45,20 @@ nav ul {
 
   padding: 1%;
   border-radius: 5%;
+}
+
+.titulo {
+  margin: 0;
+  background: #0a0879;
+  color: white;
+}
+
+.letter-white{
+  color: black;
+  font-size: 1.2em;
+}
+
+footer{
+  clear: both;
+  margin-top: 8%;
 }

@@ -1,6 +1,26 @@
-#ejercicio2{
-    border: 5px solid black;
-    height: 300px;
-    width: 40%;
-    margin: auto;
+.translacion {
+    transition-duration: 2s;
+}
+
+.translacion:hover {
+    transform: translate(-30px, 50px);
+    transition-duration: 2s;
+}
+
+.escalado {
+    transition-duration: 2s;
+}
+
+.escalado:hover {
+    transform: scale(1.1, 1.1);
+    transition-duration: 2s;
+}
+
+.rotacion {
+    transition-duration: 2s;
+}
+
+.rotacion:hover {
+    transform: rotate(-20deg);
+    transition-duration: 2s;
 }

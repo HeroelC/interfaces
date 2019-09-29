@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Práctico 3: CSS, Transformaciones y Animaciones</title>
+    <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display:400,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="css/game-runner/scene.css">
@@ -14,9 +16,6 @@
 </head>
 
 <body>
-    <h1 class="center">Interfaces de usuario e interacción</h1>
-    <h2 class="center">Carpinetti, Heroel | Entregable 3</h2>
-
     <nav class="center">
         <ul>
             <li class="listLink"><a href="index.html" class="nav-link">INICIO</a></li>
@@ -32,7 +31,7 @@
         <div id="background-sky" class="background-sky-animation">
             <p id="score">SCORE: <span id="points">0</span></p>
             <div id="game-info" class="no-visibility">
-                <p id="info-primary" class="info-endgame no-visibility">GAME OVER</p>
+                <p id="info-primary" class="no-visibility">GAME OVER</p>
                 <p id="info-secondary">Presione 'enter' para comenzar el juego</p>
             </div>
             <div id="building" class="building-animation">
@@ -41,9 +40,11 @@
             </div>
             <div id="ground" class="ground-animation"></div>
         </div>
-
-
     </div>
+
+    <footer>
+        <p class="letter-white center">Carpinetti, Heroel | Entregable 3</p>
+    </footer>
 
     <script src="js/game-runner.js"></script>
 </body>

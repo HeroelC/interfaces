@@ -1,8 +1,8 @@
 .panel{
     text-align: center;
     width: 100%;
-    margin: 10%;
-    float: both;
+    margin: 0 10%;
+    clear: both;
 }
 
 .rect1{
