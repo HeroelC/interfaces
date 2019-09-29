@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /** Función para saber si se gano el juego**/
     function isWonGame() {
-        return points.innerHTML >= 300;
+        return points.innerHTML >= 2000;
     }
 
     /** Funcion para el manejo de la puntuacion **/
