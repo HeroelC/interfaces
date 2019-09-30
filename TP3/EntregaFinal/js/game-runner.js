@@ -3,9 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /** VARIABLES DEL JUEGO **/
-    let gameRunner = document.getElementById('game-runner');
     let gameOver = true;
-    let startGameOption = false;
 
     /** SCENE OBJECT **/
     let building = document.getElementById('building');
@@ -42,17 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.onkeyup = e => {
-            if (e.code == 'Space') {
-                if (activeJump && !gameOver) {
-                    activeJump = false;
-                    player.classList.add('player-jump');
-                    setTimeout(() => {
-                        player.classList.remove('player-jump');
-                        activeJump = true;
-                    }, 1000);
-                }
+        if (e.code == 'Space') {
+            if (activeJump && !gameOver) {
+                activeJump = false;
+                player.classList.add('player-jump');
+                setTimeout(() => {
+                    player.classList.remove('player-jump');
+                    activeJump = true;
+                }, 1000);
             }
-        
+        }
+
         if (e.code == 'Enter') {
             if (gameOver) {
                 resetGame();
@@ -74,19 +72,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     npcHeight)) {
                 gameOver = true;
                 window.cancelAnimationFrame(gameLoop);
-            }
-
-            if (isWonGame()) {
+            } else if (isWonGame()) {
                 stopGame();
                 let info = document.getElementById('info-primary');
                 info.innerHTML = "WIN";
                 info.classList.remove('no-visibility');
                 gameOver = true;
                 window.cancelAnimationFrame(gameLoop);
+            } else {
+                window.requestAnimationFrame(gameLoop);
             }
-
-            window.requestAnimationFrame(gameLoop);
-        }else{
+        } else {
             stopGame();
         }
     }

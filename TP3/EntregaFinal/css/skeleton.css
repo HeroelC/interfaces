@@ -1,0 +1,22 @@
+.content-skeleton{
+    width: 400px;
+    height: 200px;
+    margin: 2% auto;
+}
+
+#skeleton{
+    width: 64px;
+    height: 64px;
+    position: absolute;
+}
+
+.skeleton-run-right{
+    background: url('../sprite/skeletons.png');
+    background-position: 0 64px;
+    animation: skeleton-run-right 1s steps(9) infinite;
+}
+
+@keyframes skeleton-run-right{
+    0% {background-position: 0 64px}
+    100% {background-position: -576px 64px}
+}
