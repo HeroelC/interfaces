@@ -1,0 +1,38 @@
+#coin{
+    width: 50px;
+    height: 45px;
+    bottom: -15%;
+    position: relative;
+}
+
+.coin-animated{
+    background: url('../../img/coin-runner/coin-animated.png');
+    animation: coin-animated 3.5s steps(6) infinite;
+}
+
+@keyframes coin-animated{
+    0% {
+        right: -95%;
+        background-position: 0;
+    }
+
+    25% { 
+        right: -75%;
+        background-position: 300px;
+    }
+
+    50% {
+        right: -50%;
+        background-position: 0;
+    }
+
+    75% {
+        right: -25%;
+        background-position: 300px;
+    }
+
+    100%{
+        right: 5%;
+        background-position: 0;
+    }
+}

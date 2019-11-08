@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Práctico 3: CSS, Transformaciones y Animaciones</title>
+    <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display:400,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/game-runner/scene.css">
+    <link rel="stylesheet" href="css/game-runner/npc.css">
+    <link rel="stylesheet" href="css/game-runner/player.css">
+    <link rel="stylesheet" href="css/game-runner/instructions.css">
+    <link rel="stylesheet" href="css/game-runner/coin.css">
+</head>
+
+<body>
+    <nav class="center">
+        <ul>
+            <li class="listLink"><a href="index.html" class="nav-link">INICIO</a></li>
+            <li class="listLink"><a href="ejercicio1.html" class="nav-link">EJERCICIO 1</a></li>
+            <li class="listLink"><a href="ejercicio2.html" class="nav-link">EJERCICIO 2</a></li>
+            <li class="listLink"><a href="ejercicio3.html" class="nav-link">EJERCICIO 3</a></li>
+            <li class="listLink"><a href="ejercicio4.html" class="nav-link">EJERCICIO 4</a></li>
+            <li class="listLink"><a href="ejercicio5.html" class="nav-link">EJERCICIO 5</a></li>
+        </ul>
+    </nav>
+
+    <div id="game-runner">
+        <div id="background-sky">
+            <div id="background-sky-maleza" class="background-sky-maleza-animation">
+            <div id="background-sky-aracnidos" class="background-sky-aracnidos-animation">
+                    <div id="background-sky-arbol" class="background-sky-arbol-animation">
+                        <p id="score">SCORE: <span id="points">0</span> <span>/ 500</span></p>
+                        <div id="game-info" class="no-visibility">
+                            <p id="info-primary" class="no-visibility">GAME OVER</p>
+                            <p id="info-secondary">Presione 'enter' para comenzar el juego</p>
+                        </div>
+                            <div id="coin" class="coin-animated"></div>
+                            <div id="player" class="player-run-right"></div>
+                            <div id="npc" class="npc-run"></div>
+                        <div id="ground" class="ground-animation"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-instructions center">
+        <h1>Instrucciones</h1>
+        <h2>Controles</h2>
+        <p>Saltar presionando la tecla 'Space'</p>
+        <h2>Objetivo del juego</h2>
+        <p>El jugador debe saltar al NPC que aparece de manera aleatoria,
+            mientras el jugador no colisione con este, el juego continua.
+            Si se recolectan las monedas que aparecen de manera aleatoria el jugador
+            obtiene 100 puntos.
+            Si se obtienen 500 puntos el jugador gana el juego.
+        </p>
+    </div>
+
+    <footer>
+        <p class="letter-white center">Carpinetti, Heroel | Entregable 3</p>
+    </footer>
+
+    <script src="js/game-runner.js"></script>
+</body>
+
+</html>

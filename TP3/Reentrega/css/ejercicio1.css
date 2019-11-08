@@ -1,0 +1,53 @@
+.panel{
+    text-align: center;
+    width: 100%;
+    margin: 0 10%;
+    clear: both;
+}
+
+.rect1{
+    float: left;
+    height: 200px;
+    width: 25%;
+    background-color: red;
+    border: 1px solid black;
+    transition-duration: 3s;
+}
+
+.rect1:hover{
+    height: 300px;
+    width: 500px;
+    background-color: gold;
+}
+
+.rect2 {
+    float: left;
+    height: 200px;
+    width: 25%;
+    border: 1px solid black;
+    background-color: blue;
+    transition: 2s;
+}
+
+.rect2:hover{
+    height: 300px;
+    width: 500px;
+    background-color: lightblue;
+}
+
+.rect3 {
+    float: left;
+    height: 200px;
+    width: 25%;
+    border: 1px solid black;
+    background-color: green;
+    transition: 4s;
+}
+
+.rect3:hover{
+    height: 300px;
+    width: 500px;
+    background-color: lightgreen;
+}
+
+

@@ -1,0 +1,64 @@
+:root {
+  /* Colores de la página */
+  --primaryColour: rgb(11, 2, 58);
+  --secondaryColour: #ffffff;
+  /* Colores de las letras */
+  --primaryColourText: white;
+  --secondaryColourText: rgb(148, 9, 9);
+  /* Colores de links */
+  --primaryColourLink: rgb(59, 103, 214);
+  --secondaryColourLink: rgb(5, 0, 255);
+}
+
+body {
+  font-family: 'Big Shoulders Display', cursive;
+}
+
+.center {
+  text-align: center;
+}
+
+nav {
+  margin: 1%;
+}
+
+.listLink {
+  display: inline;
+}
+
+nav ul {
+  padding: 0%;
+}
+
+.nav-link:hover {
+  font-weight: bold;
+  color: var(--primaryColourText);
+  background-color: var(--primaryColour);
+}
+
+.nav-link {
+  color: var(--primaryColour);
+  background-color: var(--secondaryColour);
+
+  text-decoration: none;
+  font-weight: bold;
+
+  padding: 1%;
+  border-radius: 5%;
+}
+
+.titulo {
+  margin: 0;
+  background: #0a0879;
+  color: white;
+}
+
+.letter-white{
+  color: black;
+  font-size: 1.2em;
+}
+
+footer{
+  clear: both;
+  margin-top: 2%;
+}

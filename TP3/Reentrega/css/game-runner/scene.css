@@ -1,0 +1,111 @@
+#game-runner {
+    width: 80%;
+    height: 350px;
+    margin: .5% auto;
+}
+
+#score {
+    font-size: 1.2em;
+    top: 1%;
+    z-index: 100;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+#game-info{
+    z-index: 5;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    line-height: .5%;
+    top: 5%;
+}
+.no-visibility{
+    visibility: hidden;
+}
+
+.info-endgame{
+    margin: 0;
+    font-size: 3em;
+}
+
+
+#background-sky {
+    position: relative;
+    z-index: 1;
+    height: 400px;
+    background: url('../../img/scene-runner/layer0.png')
+}
+
+#background-sky-aracnidos{
+    position: relative;
+    z-index: 99;
+    height: 400px;
+    background-position: cover;
+    background: url('../../img/scene-runner/layer1.png');
+}
+
+.background-sky-aracnidos-animation{
+    animation: aracnidos-animation 12s linear infinite;
+}
+
+#background-sky-maleza{
+    position: relative;
+    z-index: -1;
+    height: 400px;
+    background-position: cover;
+    background: url('../../img/scene-runner/layer2.png');
+}
+
+.background-sky-maleza-animation{
+    animation: maleza-animation 15s linear infinite;
+}
+
+#background-sky-arbol{
+    position: relative;
+    z-index: 3;
+    height: 400px;
+    background-position: cover;
+    background: url('../../img/scene-runner/layer3.png');
+}
+
+.background-sky-arbol-animation{
+    animation: background-arbol-animation 8s linear infinite;
+}
+
+#ground {
+    position: relative;
+    height: 50px;
+    z-index: 3;
+    bottom: 3%;
+    background: url('../../img/scene-runner/ground.png');
+}
+
+.ground-animation {
+    animation: ground-animation 10s linear infinite;
+}
+
+@keyframes ground-animation {
+    100% {
+        background-position: -1920px 0;
+    }
+}
+
+@keyframes aracnidos-animation{
+    100%{
+        background-position: -710px 0;
+    }
+}
+
+@keyframes background-arbol-animation{
+    100%{
+        background-position: -710px 0;
+    }
+}
+
+@keyframes maleza-animation{
+    100%{
+        background-position: -710px 0;
+    }
+}
